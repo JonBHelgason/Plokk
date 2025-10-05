@@ -23,7 +23,7 @@ describe('Areas API', () => {
       });
 
     expect(cleanResponse.status).toBe(201);
-  expect(cleanResponse.body.profile.totalCleanings).toBeGreaterThan(0);
+    expect(cleanResponse.body.profile.totalCleanings).toBeGreaterThan(0);
 
     const profileResponse = await request(app).get('/api/profiles/test-user');
     expect(profileResponse.body.totalCleanings).toBeGreaterThanOrEqual(1);

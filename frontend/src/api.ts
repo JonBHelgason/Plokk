@@ -9,7 +9,7 @@ export interface Area {
   radiusMeters: number;
   lastCleanedAt: string | null;
   status: AreaStatus;
-  cleaningStreakDays: number | null;
+  daysSinceLastCleaned: number | null;
 }
 
 export interface CleaningEvent {
