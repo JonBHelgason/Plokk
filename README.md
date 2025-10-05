@@ -86,26 +86,39 @@ Hér er yfirlit yfir fyrirhugaðan tæknistafla. *Þetta gæti tekið breytingum
 
 Til að setja upp verkefnið á þinni vél fyrir þróun, fylgdu þessum skrefum:
 
-1.  **Klónaðu verkefnið (Clone):**
+1. **Klónaðu verkefnið:**
     ```sh
-    git clone [https://github.com/ditt-notendanafn/plokka.git](https://github.com/ditt-notendanafn/plokka.git)
+    git clone https://github.com/ditt-notendanafn/plokka.git
+    cd plokka
     ```
 
-2.  **Settu upp bakenda (Backend):**
+2. **Bakendi (Node.js + Express):**
     ```sh
-    cd plokka/backend
-    npm install # Eða 'pip install -r requirements.txt' fyrir Python
-    # Afritaðu .env.example yfir í .env og stilltu breytur
-    npm run dev # Eða 'python manage.py runserver'
-    ```
-
-3.  **Settu upp smáforrit (Frontend):**
-    ```sh
-    cd plokka/frontend
+    cd backend
     npm install
-    # Stilltu API slóðir eftir þörfum
-    npm start
+    npm run dev
     ```
+
+    Sjálfgefið keyrir þjónustan á `http://localhost:4000`. Breytu `PORT` og `HOST` ef þarf með umhverfisbreytum.
+
+3. **Framendi (Vite + React):**
+    ```sh
+    cd frontend
+    npm install
+    npm run dev
+    ```
+
+    Vite þjónustan proxar beiðnir á `/api` yfir á bakendann. Ef þú keyrir bakendann á annarri slóð geturðu skilgreint `VITE_API_BASE_URL` í `.env.local`.
+
+4. **Keyra próf:**
+
+    - Bakendi: `cd backend && npm test`
+    - Framendi: `cd frontend && npm test`
+
+5. **Byggja fyrir afhendingu:**
+
+    - Bakendi: `cd backend && npm run build`
+    - Framendi: `cd frontend && npm run build`
 
 ---
 
