@@ -72,11 +72,11 @@ export default function App() {
     return areasQuery.data[0] ?? null;
   }, [areasQuery.data, selectedAreaId]);
 
-  const mapCenter = useMemo(() => {
+  const mapCenter = useMemo((): [number, number] => {
     if (selectedArea) {
-      return [selectedArea.center.lat, selectedArea.center.lng] as const;
+      return [selectedArea.center.lat, selectedArea.center.lng];
     }
-    return [64.1466, -21.9426] as const;
+    return [64.1466, -21.9426];
   }, [selectedArea]);
 
   return (
