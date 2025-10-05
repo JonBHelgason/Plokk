@@ -19,7 +19,7 @@ vi.mock('./api', () => ({
       radiusMeters: 200,
       lastCleanedAt: new Date().toISOString(),
       status: 'green',
-      cleaningStreakDays: 1,
+      daysSinceLastCleaned: 1,
     },
   ]),
   fetchProfile: vi.fn().mockResolvedValue({
@@ -42,8 +42,8 @@ describe('App', () => {
       </QueryClientProvider>,
     );
 
-  expect(await screen.findByText(/Plokka MVP/)).toBeInTheDocument();
-  const areaTitles = await screen.findAllByText(/Testsvæði/);
-  expect(areaTitles.length).toBeGreaterThan(0);
+    expect(await screen.findByText(/Plokka MVP/)).toBeInTheDocument();
+    const areaTitles = await screen.findAllByText(/Testsvæði/);
+    expect(areaTitles.length).toBeGreaterThan(0);
   });
 });

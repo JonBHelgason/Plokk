@@ -97,7 +97,7 @@ export function listAreas() {
   return areas.map((area) => ({
     ...area,
     status: getStatus(area.lastCleanedAt),
-    cleaningStreakDays: area.lastCleanedAt
+    daysSinceLastCleaned: area.lastCleanedAt
       ? dayjs().diff(dayjs(area.lastCleanedAt), 'day')
       : null,
   }));
