@@ -88,23 +88,46 @@ Til að setja upp verkefnið á þinni vél fyrir þróun, fylgdu þessum skrefu
 
 1.  **Klónaðu verkefnið (Clone):**
     ```sh
-    git clone [https://github.com/ditt-notendanafn/plokka.git](https://github.com/ditt-notendanafn/plokka.git)
+    git clone https://github.com/JonBHelgason/Plokk.git
+    cd Plokk
     ```
 
 2.  **Settu upp bakenda (Backend):**
     ```sh
-    cd plokka/backend
-    npm install # Eða 'pip install -r requirements.txt' fyrir Python
-    # Afritaðu .env.example yfir í .env og stilltu breytur
-    npm run dev # Eða 'python manage.py runserver'
+    cd backend
+    npm install
+    npm run dev
+    ```
+    Bakendinn keyrir á `http://localhost:3001`
+
+3.  **Settu upp framenda (Frontend) - í nýrri skel:**
+    ```sh
+    cd frontend
+    npm install
+    npm run dev
+    ```
+    Framendinn keyrir á `http://localhost:5173`
+
+4.  **Keyra próf (Tests):**
+    ```sh
+    # Bakenda próf
+    cd backend
+    npm test
+    
+    # Framenda próf
+    cd frontend
+    npm test
     ```
 
-3.  **Settu upp smáforrit (Frontend):**
+5.  **Byggja verkefnið (Build):**
     ```sh
-    cd plokka/frontend
-    npm install
-    # Stilltu API slóðir eftir þörfum
-    npm start
+    # Bakenda
+    cd backend
+    npm run build
+    
+    # Framenda
+    cd frontend
+    npm run build
     ```
 
 ---
